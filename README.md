@@ -10,6 +10,7 @@ Dichos scripts estan pensados para simplificar tareas.
 ---
 
 2018-01-05: Creacion del script: extractor.sh, utilizado para obtener las direcciones IP desde el resultado de un ping-sweep de NMap
+
 2018-01-05: Creacion del script: comparador.sh, se usa para buscar que IPs estan en que archivo, teniendo uno como "linea-base"
 
 ---
