@@ -1,16 +1,16 @@
 # bash-scripts
 
-Este repositorio almacenara todos los scripts de bash que vaya generando.
-Dichos scripts estan pensados para simplificar tareas.
+This repository files all the bash scripts made by me.
+These scripts are made for simplify some tasks.
 
 ---
 
-2018-01-03: Creacion del script: alive.sh, que busca detectar maquinas vivas en segmentos de red predefinidos
+2018-01-03: Creation of script: alive.sh, is used for find alive machines in pre-defined network segments
 
 ---
 
-2018-01-05: Creacion del script: extractor.sh, utilizado para obtener las direcciones IP desde el resultado de un ping-sweep de NMap
+2018-01-05: Creation of script: extractor.sh, made for obtain a list of IPs, result of a ping-sweep scan made with NMap (Raw IP list)
 
-2018-01-05: Creacion del script: comparador.sh, se usa para buscar que IPs estan en que archivo, teniendo uno como "linea-base"
+2018-01-05: Creation of script: comparator.sh, is used for search for an IP in a list of file, using a "base-line", an original file with a lists of IPs
 
 ---

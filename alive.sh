@@ -1,41 +1,40 @@
 #!/bin/bash
 
-#Script para la verificacion de maquinas vivas en uno (o mas) segmentos de red
+#Script for check alive machines in one or more network segments
 
-#Pre-requisitos
+#Pre-requisites
 #
-#Tener instalado NMap
+#NMap installed, configured and functional
 #
-#Privilegios de lecto/escritura en las rutas que se pasan como parametro
+#R/W permissions on the paths used by this script
 #
-#Los directorios deben estar creados
+#The directories must exist prior to the execution of the script
 
-#Se puede programar desde cron, simplemente suprimiendo las lineas donde se piden los parametros y grabando las rutas en el codigo
+#Note: Cron must be used to execute this script, only comment the lines where the parameters ar asked
 
 
-#***Comienzo del script***#
+#***Script start***#
 
-#Definicion de la ruta donde se ubican los binarios (des-comentar para usar con cron)
+#Binary path declaration (un-comment for cron use)
 #SHELL=/bin/sh PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
-#Captura de la lista de entrada
-#Comentar o eliminar esto si se va a usar con cron
-echo "Digite la ruta completa donde se almacena la lista de rangos de IPs a escanear"
+#Input list capture
+#Comment or delte for cron use
+echo "Type the complete path to the input list of network segments"
 read lista_entrada
 
-#Captura de la ruta de almacenamiento
-#Comentar o eliminar esto si se va a usar con cron
-echo "Digite la ruta donde se van a almacenar los resultados"
+#Save path capture
+#Comment or delte for cron use
+echo "Type the complete path where the results where saved"
 read ruta_almacena
 
-#Obtencion de Fecha (Formato ISO-8601) con nanosegundos
+#DateTime adquisition (Format ISO-8601) with nanoseconds
 dateandtime=$(date +%Y-%m-%d_%T.%N)
 
-#Escaneo "ping-sweep" para detectar que maquinas hay vivas en los segmentos de red que se le pasan como parametro
+#Ping-sweep scan for search if a machine is alive or not in the defined segments (input list)
 nmap -sP -iL $lista_entrada -oN $ruta_almacena/$dateandtime.alive
-#Comentar la linea anterior y des-comentar la siguiente si se va a usar con cron (ajustar la ubicacion del binario de nmap)
-#Validar la ubicacion del binario de NMap para la distribucion que se esta utilizando, eso se hace con el comando: which nmap
-#Luego utilizar la salida de dicho comando como base de la linea de abajo.
+#Comment the last line an un-comment the next one if it while be used by cron
 #/usr/bin/nmap -sP -iL ruta_completa_donde_se_ubica_la_lista -oN ruta_completa_donde_se_almacenaran_los_archivos/$dateandtime.alive
+#Validate the exact location of NMap binary (which nmap) and replace (if necessary) in the last line, un-comment to use with cron
 
-#***Fin del script***#
+#***Script end***#
