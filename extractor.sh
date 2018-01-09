@@ -1,17 +1,17 @@
 #!/bin/bash
 
-#Script para obtener las direcciones IP desde un resultado de NMap una vez se ejecuta un ping-sweep
+#Script for obtain the list of IPs (Raw list) from a ping-sweep result of an NMap scanning
 
-#Prerequisitos
+#Prerequisites
 #
-#Contar con archivos resultado de un escaneo con la herramienta NMap (deben ser escaneo ping-sweep)
+#Have the files of a ping-sweep scan, made with NMap
 
-#***Comienzo del script***#
+#***Script start***#
 
-#Definicion del tipo de archivos a buscar
+#Definition of the file extension
 FILES=*.alive
 
-#Recorrer lista de archivos *.alive
+#Read the list of files *.alive
 for f in $FILES
 	do 
 	filename1=$f
@@ -19,4 +19,4 @@ for f in $FILES
 	foo=${filename1%$extension}
 	cat $filename1 | grep Nmap\ scan | awk '{print $5}' | sort | uniq > foo1/$foo.ips
 done
-#***Fin del script***#
+#***Script end***#
