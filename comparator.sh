@@ -1,26 +1,25 @@
 #!/bin/bash
 
-#Script para identificar si una direccion IP está o no en multiples archivos, a partir de una linea base
+#Script used to identify if a IP is present in multiple files, compared to a baseline file.
 
-#Para almacenar el resultado se debe redirigir la ejecución del script a un archivo "./script.sh > archivo_salida"
+#The script uses STOUT, to save the results they must be redirected to another file "./script.sh > output_file"
 
-#Prerequisitos
+#Prerequisites
 #
-#Linea base con las IPs que se deben comparar
-#
-#Listado de archivos con las IPs a comparar
+#Baseline with the IPs to compare
+#List of files with the IPs to search
 
-#***Comienzo del script***"
+#***Script start***"
 
-#Captura de la ubicacion del archivo de Linea base
-echo "Digite la ruta completa al archivo de linea base"
+#Base line path capture
+echo "Type the full path to the baseline file"
 read base
 
-#Captura de la extension de los archivos a comparar (formato: *.extension)
-echo "Digite la ruta y la extension de los archivos a comparar (el formato es: ruta/*.extension)"
+#Extension capture
+echo "Type the extension of the files to compare (the format is: path/*.extension)"
 read FILES
 
-#Comienza la labor de comparacion
+#Start of compare
 for f in $FILES
 do
 	while read line1; do
@@ -31,4 +30,4 @@ do
 		fi
 	done < "$f"
 done
-#***Fin del script***#
+#***Script end***#
