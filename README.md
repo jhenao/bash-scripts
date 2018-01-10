@@ -16,3 +16,5 @@ These scripts are made for simplify some tasks.
 ---
 
 2018-01-09: Creation of script: dict_gen.sh, used to generate a dictionary with the following variations: UPPER, lower, nospaces, b4s1c l337
+
+---

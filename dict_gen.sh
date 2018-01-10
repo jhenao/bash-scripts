@@ -9,11 +9,6 @@
 
 #***Script start***
 
-#for i in {1..99999999}
-#	do
-	#echo $i | md5sum | awk '{print $1}'
-#	echo $i 
-#done
 #Define counter
 i=0
 
